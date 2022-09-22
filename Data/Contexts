@@ -1,0 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using Trabalho4SemestreApi.Models;
+
+
+namespace Trabalho4SemestreApi.Data
+{
+    public class Contexts: DbContext
+    {
+        public Contexts(DbContextOptions<Contexts> options)
+            : base(options) => Database.EnsureCreated();
+        public DbSet<Restaurante> Restaurante { get; set; }
+        public DbSet<Pedido> Pedido { get; set; }
+    }
